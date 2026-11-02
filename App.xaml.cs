@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace Wandy;
+namespace Sainty;
 
 public partial class App : Application
 {

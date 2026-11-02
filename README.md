@@ -1,31 +1,39 @@
-# Wandy
+# Sainty
 
-clean-room reconstruction of the functionality recovered from `SentinelMacro.exe`.
+A clean-room reconstruction of the desktop functionality recovered from the supplied `SentinelMacro.exe`.
 
-> this is **not** the original source code. the supplied executable was a self-contained .NET application, so original comments, project metadata, names, and some implementation details cannot be recovered exactly.
+This is a new implementation, **not the original source code**. The executable contains a self-contained .NET 10 application and its primary managed assembly could be extracted and inspected for metadata. Original comments, formatting, project files and some implementation details are not recoverable from that metadata alone.
 
-## current scope
+## Current build
 
-- WPF desktop shell
-- JSON configuration/profiles
-- high-resolution macro timing
-- keyboard/mouse input through Win32 `SendInput`
-- pixel-based trigger scanner
-- Roblox process detection
-- optional Windows startup entry
-- updater abstraction with explicit confirmation
+- WPF desktop shell with Overview, Clicker, Trigger Bot, Games, Profiles and Settings sections.
+- Local JSON settings and profile persistence under `%LOCALAPPDATA%\Sainty`.
+- Local process-name game discovery.
+- Recovered settings and profile field names used as the starting data model.
+- No external service calls in this milestone.
 
-## build
+## Next engineering milestones
 
-requires Windows and the .NET 10 Windows SDK/runtime.
+1. Rebuild and verify the timing/input engine.
+2. Reimplement the pixel scan pipeline behind an isolated, testable service.
+3. Recreate the window overlay and theme behavior.
+4. Review updater, Discord and account integrations independently before adding any network code.
 
-```powershell
-dotnet restore
-dotnet build -c Release
-```
+The macro and trigger pages currently store configuration only. They do not send input or scan the screen yet.
 
-## safety / migration notes
+## Build
 
-The original binary was unsigned. Its updater also downloaded release artifacts without an obvious application-level signature check. Wandy intentionally does **not** silently replace itself or execute downloaded code.
+Requires Windows and the .NET 10 SDK with the Windows Desktop workload.
 
-Network integrations from the binary (Roblox metadata, donation/account services, Discord RPC) are left out of this first clean-room pass rather than copying unknown endpoints into the new project.
+~~~powershell
+dotnet restore Sainty.csproj
+dotnet build Sainty.csproj -c Release
+~~~
+
+## Recovery notes
+
+See [docs/recovered-structure.md](docs/recovered-structure.md) for the extracted assembly map and the verified names of the main application types.
+
+The original executable was unsigned. Its updater downloaded release artifacts without an obvious application-level signature check. Sainty intentionally does not silently replace itself or run downloaded code.
+
+Roblox metadata, donation/account services and Discord RPC are intentionally omitted from this first pass. No unknown endpoint or credential flow is copied into the new project.

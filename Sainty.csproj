@@ -6,8 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Platforms>x64</Platforms>
-    <AssemblyName>Wandy</AssemblyName>
-    <RootNamespace>Wandy</RootNamespace>
+    <PlatformTarget>x64</PlatformTarget>
+    <AssemblyName>Sainty</AssemblyName>
+    <RootNamespace>Sainty</RootNamespace>
   </PropertyGroup>
 </Project>

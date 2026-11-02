@@ -1,3 +1,61 @@
-<Application x:Class="Wandy.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="MainWindow.xaml">
-  <Application.Resources />
+<Application x:Class="Sainty.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="AppBackground" Color="#0B1118" />
+        <SolidColorBrush x:Key="PanelBackground" Color="#121C27" />
+        <SolidColorBrush x:Key="PanelBorder" Color="#263545" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#53D7B0" />
+        <SolidColorBrush x:Key="PrimaryText" Color="#EAF1F7" />
+        <SolidColorBrush x:Key="MutedText" Color="#93A5B6" />
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#0D1620" />
+            <Setter Property="Foreground" Value="#EAF1F7" />
+            <Setter Property="BorderBrush" Value="#314354" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="CaretBrush" Value="#53D7B0" />
+            <Setter Property="MinWidth" Value="110" />
+        </Style>
+
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Background" Value="#0D1620" />
+            <Setter Property="Foreground" Value="#EAF1F7" />
+            <Setter Property="BorderBrush" Value="#314354" />
+            <Setter Property="Padding" Value="7,5" />
+            <Setter Property="MinWidth" Value="110" />
+        </Style>
+
+        <Style x:Key="PrimaryButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#53D7B0" />
+            <Setter Property="Foreground" Value="#07120F" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="15,9" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Margin" Value="0,0,8,0" />
+        </Style>
+
+        <Style x:Key="SecondaryButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#1A2937" />
+            <Setter Property="Foreground" Value="#DCE7EF" />
+            <Setter Property="BorderBrush" Value="#314354" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="15,9" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Margin" Value="0,0,8,0" />
+        </Style>
+
+        <Style x:Key="NavButton" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#A9B8C6" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="14,11" />
+            <Setter Property="Margin" Value="0,3" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+    </Application.Resources>
 </Application>
