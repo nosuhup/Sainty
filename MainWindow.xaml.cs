@@ -190,6 +190,7 @@ public partial class MainWindow : Window
             ? "Profile"
             : ProfileNameTextBox.Text.Trim();
 
+        _settings.LastProfileName = name;
         var profile = MacroProfile.FromSettings(_settings, name);
         var existingIndex = -1;
 

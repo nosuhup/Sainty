@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Column="0" Background="#0E1721" BorderBrush="#1F2D3A" BorderThickness="0,0,1,0">
-            <DockPanel Margin="18,22,18,18">
+            <DockPanel Margin="18,22,18,18" LastChildFill="False">
                 <StackPanel DockPanel.Dock="Top">
                     <TextBlock Text="SAINTY" FontSize="24" FontWeight="Bold" Foreground="#EAF1F7" />
                     <TextBlock Text="DESKTOP CONTROL" FontSize="9" Foreground="#6E8295" Margin="1,4,0,27" />
