@@ -1,2 +1,2 @@
-# WAVEL1SS
+# Wandy
 in progress...
