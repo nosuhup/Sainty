@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1
+
+Hotfix release focused on making the Windows release package available directly from GitHub Releases.
+
+- Attach the self-contained Windows x64 ZIP to the GitHub release automatically
+- Publish a SHA-256 checksum alongside the package
+- Keep the Actions artifact as a secondary build output
+
 ## 1.0.0
 
 First release of Sainty.
