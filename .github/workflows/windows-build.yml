@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -35,12 +35,25 @@ jobs:
           $version = '${{ github.ref_name }}'
           dotnet publish Sainty.csproj --configuration Release --runtime win-x64 --self-contained true --output publish
           Compress-Archive -Path publish\* -DestinationPath "Sainty-$version-win-x64.zip" -Force
-          Get-FileHash "Sainty-$version-win-x64.zip" -Algorithm SHA256 | Format-List
+          (Get-FileHash "Sainty-$version-win-x64.zip" -Algorithm SHA256).Hash | Out-File "Sainty-$version-win-x64.zip.sha256" -Encoding ascii
 
-      - name: Upload release package
+      - name: Upload release package artifact
         if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@v4
         with:
           name: Sainty-${{ github.ref_name }}-win-x64
-          path: Sainty-${{ github.ref_name }}-win-x64.zip
+          path: |
+            Sainty-${{ github.ref_name }}-win-x64.zip
+            Sainty-${{ github.ref_name }}-win-x64.zip.sha256
           if-no-files-found: error
+
+      - name: Attach package to GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload '${{ github.ref_name }}' `
+            "Sainty-${{ github.ref_name }}-win-x64.zip" `
+            "Sainty-${{ github.ref_name }}-win-x64.zip.sha256" `
+            --clobber
