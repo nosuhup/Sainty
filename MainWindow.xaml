@@ -14,7 +14,6 @@
             <ColumnDefinition Width="222" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
         <Border Grid.Column="0" Background="#0E1721" BorderBrush="#1F2D3A" BorderThickness="0,0,1,0">
             <DockPanel Margin="18,22,18,18" LastChildFill="False">
                 <StackPanel DockPanel.Dock="Top">
@@ -29,257 +28,31 @@
                     <Button Style="{StaticResource NavButton}" Tag="Profiles" Click="Navigate_Click" Content="▤   Profiles" />
                     <Button Style="{StaticResource NavButton}" Tag="Settings" Click="Navigate_Click" Content="⚙   Settings" />
                 </StackPanel>
-
                 <StackPanel DockPanel.Dock="Bottom">
                     <Border Background="#152330" BorderBrush="#2A3B4B" BorderThickness="1" CornerRadius="9" Padding="12">
-                        <StackPanel>
-                            <TextBlock Text="RECOVERY BUILD" FontSize="9" FontWeight="Bold" Foreground="#53D7B0" />
-                            <TextBlock Text="Local-first reconstruction" FontSize="11" Foreground="#A9B8C6" Margin="0,5,0,0" />
-                            <TextBlock Text="Network services are disabled" FontSize="10" Foreground="#718596" Margin="0,3,0,0" />
-                        </StackPanel>
+                        <StackPanel><TextBlock Text="RECOVERY BUILD" FontSize="9" FontWeight="Bold" Foreground="#53D7B0" /><TextBlock Text="Local-first reconstruction" FontSize="11" Foreground="#A9B8C6" Margin="0,5,0,0" /><TextBlock Text="Network services are disabled" FontSize="10" Foreground="#718596" Margin="0,3,0,0" /></StackPanel>
                     </Border>
-                    <TextBlock Text="SAINTY  ·  0.1.0" Foreground="#63788A" FontSize="10" Margin="3,13,0,0" />
+                    <TextBlock Text="SAINTY  ·  0.2.0" Foreground="#63788A" FontSize="10" Margin="3,13,0,0" />
                 </StackPanel>
             </DockPanel>
         </Border>
-
         <Grid Grid.Column="1" Margin="30,24,30,18">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="66" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="32" />
-            </Grid.RowDefinitions>
-
+            <Grid.RowDefinitions><RowDefinition Height="66" /><RowDefinition Height="*" /><RowDefinition Height="32" /></Grid.RowDefinitions>
             <Grid Grid.Row="0" Margin="0,0,0,18">
-                <StackPanel VerticalAlignment="Center">
-                    <TextBlock x:Name="CurrentPageTitle" Text="Overview" FontSize="23" FontWeight="SemiBold" />
-                    <TextBlock x:Name="CurrentPageDescription" Text="A local workspace rebuilt from recovered application metadata." FontSize="12" Foreground="{StaticResource MutedText}" Margin="0,4,0,0" />
-                </StackPanel>
-                <Border HorizontalAlignment="Right" VerticalAlignment="Center" Background="#152A2A" BorderBrush="#2D665A" BorderThickness="1" CornerRadius="12" Padding="10,6">
-                    <StackPanel Orientation="Horizontal">
-                        <Ellipse Width="7" Height="7" Fill="#53D7B0" VerticalAlignment="Center" Margin="0,0,7,0" />
-                        <TextBlock Text="LOCAL MODE" FontSize="9" FontWeight="Bold" Foreground="#8BE8CB" />
-                    </StackPanel>
-                </Border>
+                <StackPanel VerticalAlignment="Center"><TextBlock x:Name="CurrentPageTitle" Text="Overview" FontSize="23" FontWeight="SemiBold" /><TextBlock x:Name="CurrentPageDescription" Text="A local workspace rebuilt from recovered application metadata." FontSize="12" Foreground="{StaticResource MutedText}" Margin="0,4,0,0" /></StackPanel>
+                <Border HorizontalAlignment="Right" VerticalAlignment="Center" Background="#152A2A" BorderBrush="#2D665A" BorderThickness="1" CornerRadius="12" Padding="10,6"><StackPanel Orientation="Horizontal"><Ellipse Width="7" Height="7" Fill="#53D7B0" VerticalAlignment="Center" Margin="0,0,7,0" /><TextBlock Text="LOCAL MODE" FontSize="9" FontWeight="Bold" Foreground="#8BE8CB" /></StackPanel></Border>
             </Grid>
-
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                 <Grid>
-                    <Grid x:Name="OverviewPage">
-                        <StackPanel>
-                            <Border Background="#142331" BorderBrush="#2B3F50" BorderThickness="1" CornerRadius="14" Padding="24" Margin="0,0,0,16">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <StackPanel VerticalAlignment="Center">
-                                        <TextBlock Text="Sentinel, rebuilt as Sainty." FontSize="22" FontWeight="SemiBold" />
-                                        <TextBlock Text="The original executable's metadata has been recovered. This clean-room build starts with the desktop shell, settings and profile format." TextWrapping="Wrap" Foreground="#A9B8C6" FontSize="12" MaxWidth="590" Margin="0,9,20,0" />
-                                    </StackPanel>
-                                    <Border Grid.Column="1" Background="#203A3B" CornerRadius="12" Padding="17" VerticalAlignment="Center">
-                                        <StackPanel>
-                                            <TextBlock Text="MILESTONE 01" FontSize="9" Foreground="#82DCC2" FontWeight="Bold" />
-                                            <TextBlock Text="Structure + shell" FontSize="13" FontWeight="SemiBold" Margin="0,5,0,0" />
-                                        </StackPanel>
-                                    </Border>
-                                </Grid>
-                            </Border>
-
-                            <UniformGrid Columns="3" Margin="0,0,0,16">
-                                <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="11" Padding="16" Margin="0,0,10,0">
-                                    <StackPanel>
-                                        <TextBlock Text="MACRO ENGINE" FontSize="9" Foreground="{StaticResource MutedText}" FontWeight="Bold" />
-                                        <TextBlock Text="Not connected" FontSize="17" FontWeight="SemiBold" Margin="0,9,0,2" />
-                                        <TextBlock Text="Core loop is the next milestone" FontSize="10" Foreground="{StaticResource MutedText}" />
-                                    </StackPanel>
-                                </Border>
-                                <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="11" Padding="16" Margin="5,0">
-                                    <StackPanel>
-                                        <TextBlock Text="TRIGGER SCANNER" FontSize="9" Foreground="{StaticResource MutedText}" FontWeight="Bold" />
-                                        <TextBlock Text="Not connected" FontSize="17" FontWeight="SemiBold" Margin="0,9,0,2" />
-                                        <TextBlock Text="Settings are stored locally" FontSize="10" Foreground="{StaticResource MutedText}" />
-                                    </StackPanel>
-                                </Border>
-                                <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="11" Padding="16" Margin="10,0,0,0">
-                                    <StackPanel>
-                                        <TextBlock Text="CONFIGURATION" FontSize="9" Foreground="{StaticResource MutedText}" FontWeight="Bold" />
-                                        <TextBlock Text="Ready" FontSize="17" FontWeight="SemiBold" Margin="0,9,0,2" />
-                                        <TextBlock Text="JSON · Local application data" FontSize="10" Foreground="{StaticResource MutedText}" />
-                                    </StackPanel>
-                                </Border>
-                            </UniformGrid>
-
-                            <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="11" Padding="19">
-                                <StackPanel>
-                                    <TextBlock Text="Continue setup" FontSize="15" FontWeight="SemiBold" />
-                                    <TextBlock Text="Open a section to review the recovered settings and local profile workflow." FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,5,0,16" />
-                                    <WrapPanel>
-                                        <Button Style="{StaticResource PrimaryButton}" Content="Open clicker" Click="OpenClicker_Click" />
-                                        <Button Style="{StaticResource SecondaryButton}" Content="Open trigger bot" Click="OpenTriggerBot_Click" />
-                                        <Button Style="{StaticResource SecondaryButton}" Content="View detected games" Tag="Games" Click="Navigate_Click" />
-                                    </WrapPanel>
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </Grid>
-
-                    <Grid x:Name="ClickerPage" Visibility="Collapsed">
-                        <StackPanel>
-                            <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20">
-                                <StackPanel>
-                                    <TextBlock Text="Macro configuration" FontSize="16" FontWeight="SemiBold" />
-                                    <TextBlock Text="These controls mirror the fields recovered from MacroV2.MacroEngine and AppSettings. The input loop is not wired in this milestone." FontSize="11" Foreground="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,5,0,18" />
-                                    <UniformGrid Columns="2">
-                                        <StackPanel Margin="0,0,14,13">
-                                            <TextBlock Text="Actions per second (APS)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="ApsTextBox" Text="15" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,0,13">
-                                            <TextBlock Text="Action mode" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <ComboBox x:Name="ActionModeComboBox" SelectedValuePath="Content">
-                                                <ComboBoxItem Content="Mouse" />
-                                                <ComboBoxItem Content="Keyboard" />
-                                            </ComboBox>
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,14,13">
-                                            <TextBlock Text="Key or button to repeat" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="MacroKeyTextBox" Text="LeftMouse" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,0,13">
-                                            <TextBlock Text="Activation key" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="ActivationKeyTextBox" Text="F6" />
-                                        </StackPanel>
-                                    </UniformGrid>
-                                    <CheckBox x:Name="HoldModeCheckBox" Content="Hold activation while the key is pressed" Foreground="#C4D0DA" Margin="0,3,0,8" />
-                                    <CheckBox x:Name="RandomizeCheckBox" Content="Randomize timing (setting only; engine not connected)" Foreground="#C4D0DA" Margin="0,3,0,15" />
-                                    <WrapPanel>
-                                        <Button Style="{StaticResource PrimaryButton}" Content="Save clicker settings" Click="SaveClickerSettings_Click" />
-                                    </WrapPanel>
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </Grid>
-
-                    <Grid x:Name="TriggerBotPage" Visibility="Collapsed">
-                        <StackPanel>
-                            <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20">
-                                <StackPanel>
-                                    <TextBlock Text="Pixel trigger configuration" FontSize="16" FontWeight="SemiBold" />
-                                    <TextBlock Text="The original TriggerBotEngine exposes these target, timing and activation parameters. This page currently stores configuration only; screen scanning and automated input are not active." FontSize="11" Foreground="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,5,0,18" />
-                                    <UniformGrid Columns="2">
-                                        <StackPanel Margin="0,0,14,13">
-                                            <TextBlock Text="Target color (hex)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="TargetColorTextBox" Text="#FF4040" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,0,13">
-                                            <TextBlock Text="Color tolerance (0–255)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="ToleranceTextBox" Text="12" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,14,13">
-                                            <TextBlock Text="Reaction time (ms)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="ReactionTimeTextBox" Text="0" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,0,13">
-                                            <TextBlock Text="Press cooldown (ms)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="PressCooldownTextBox" Text="75" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,14,13">
-                                            <TextBlock Text="Duplicate-ignore window (ms)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="DuplicateIgnoreTextBox" Text="50" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,0,13">
-                                            <TextBlock Text="Scan radius (px)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="ScanRadiusTextBox" Text="6" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,14,13">
-                                            <TextBlock Text="Activation key" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="TriggerActivationKeyTextBox" Text="F7" />
-                                        </StackPanel>
-                                        <StackPanel Margin="0,0,0,13">
-                                            <TextBlock Text="Action key" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                            <TextBox x:Name="TriggerKeyTextBox" Text="E" />
-                                        </StackPanel>
-                                    </UniformGrid>
-                                    <StackPanel Margin="0,0,0,15">
-                                        <TextBlock Text="Action mouse button" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" />
-                                        <ComboBox x:Name="TriggerMouseComboBox" SelectedValuePath="Content">
-                                            <ComboBoxItem Content="None" />
-                                            <ComboBoxItem Content="Left" />
-                                            <ComboBoxItem Content="Right" />
-                                            <ComboBoxItem Content="Middle" />
-                                        </ComboBox>
-                                    </StackPanel>
-                                    <CheckBox x:Name="TriggerHoldModeCheckBox" Content="Require activation to be held" Foreground="#C4D0DA" Margin="0,0,0,15" />
-                                    <Button Style="{StaticResource PrimaryButton}" Content="Save trigger settings" HorizontalAlignment="Left" Click="SaveTriggerSettings_Click" />
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </Grid>
-
-                    <Grid x:Name="GamesPage" Visibility="Collapsed">
-                        <StackPanel>
-                            <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20">
-                                <StackPanel>
-                                    <Grid>
-                                        <StackPanel>
-                                            <TextBlock Text="Running game processes" FontSize="16" FontWeight="SemiBold" />
-                                            <TextBlock x:Name="GamesCountText" Text="Not scanned yet" FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,5,0,0" />
-                                        </StackPanel>
-                                        <Button Style="{StaticResource PrimaryButton}" Content="Scan processes" HorizontalAlignment="Right" VerticalAlignment="Center" Click="RefreshGames_Click" />
-                                    </Grid>
-                                    <ListBox x:Name="GamesListBox" Background="#0D1620" Foreground="#EAF1F7" BorderBrush="#2B3C4B" Margin="0,18,0,0" MinHeight="250" Padding="7" />
-                                    <TextBlock Text="Detection is local and process-name based. No game account or session data is collected." FontSize="10" Foreground="{StaticResource MutedText}" Margin="0,12,0,0" TextWrapping="Wrap" />
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </Grid>
-
-                    <Grid x:Name="ProfilesPage" Visibility="Collapsed">
-                        <StackPanel>
-                            <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20">
-                                <StackPanel>
-                                    <TextBlock Text="Profiles" FontSize="16" FontWeight="SemiBold" />
-                                    <TextBlock Text="Save and restore the clicker and trigger settings as local JSON profiles." FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,5,0,18" />
-                                    <TextBlock Text="Profile name" FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,0,0,6" />
-                                    <TextBox x:Name="ProfileNameTextBox" Text="Default" Margin="0,0,0,14" />
-                                    <TextBlock Text="Saved profiles" FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,0,0,6" />
-                                    <ComboBox x:Name="ProfilesComboBox" DisplayMemberPath="Name" Margin="0,0,0,16" />
-                                    <WrapPanel>
-                                        <Button Style="{StaticResource PrimaryButton}" Content="Save current as profile" Click="SaveProfile_Click" />
-                                        <Button Style="{StaticResource SecondaryButton}" Content="Apply selected" Click="ApplyProfile_Click" />
-                                        <Button Style="{StaticResource SecondaryButton}" Content="Delete selected" Click="DeleteProfile_Click" />
-                                    </WrapPanel>
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </Grid>
-
-                    <Grid x:Name="SettingsPage" Visibility="Collapsed">
-                        <StackPanel>
-                            <Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20">
-                                <StackPanel>
-                                    <TextBlock Text="Application preferences" FontSize="16" FontWeight="SemiBold" />
-                                    <TextBlock Text="Preferences are stored in %LOCALAPPDATA%\Sainty. Startup registration is intentionally not enabled by this reconstruction yet." FontSize="11" Foreground="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,5,0,18" />
-                                    <CheckBox x:Name="RunOnStartupCheckBox" Content="Run on Windows startup (preference only)" Foreground="#C4D0DA" Margin="0,0,0,12" />
-                                    <CheckBox x:Name="MinimizeToTrayCheckBox" Content="Minimize to tray (not implemented)" Foreground="#C4D0DA" Margin="0,0,0,12" />
-                                    <CheckBox x:Name="PlayBeepCheckBox" Content="Play notification beep" Foreground="#C4D0DA" Margin="0,0,0,12" />
-                                    <CheckBox x:Name="TopmostCheckBox" Content="Keep Sainty above other windows" Foreground="#C4D0DA" Margin="0,0,0,18" />
-                                    <TextBlock Text="Theme" FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,0,0,6" />
-                                    <ComboBox x:Name="ThemeComboBox" SelectedValuePath="Content" HorizontalAlignment="Left" Width="180" Margin="0,0,0,17">
-                                        <ComboBoxItem Content="Dark" />
-                                    </ComboBox>
-                                    <Button Style="{StaticResource PrimaryButton}" Content="Save preferences" HorizontalAlignment="Left" Click="SavePreferences_Click" />
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </Grid>
+                    <Grid x:Name="OverviewPage"><StackPanel><Border Background="#142331" BorderBrush="#2B3F50" BorderThickness="1" CornerRadius="14" Padding="24" Margin="0,0,0,16"><StackPanel><TextBlock Text="Sentinel, rebuilt as Sainty." FontSize="22" FontWeight="SemiBold" /><TextBlock Text="Recovered metadata, local configuration and a testable timing core. Platform input remains intentionally separated from the scheduler." TextWrapping="Wrap" Foreground="#A9B8C6" FontSize="12" MaxWidth="700" Margin="0,9,20,0" /></StackPanel></Border><Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="11" Padding="19"><StackPanel><TextBlock Text="Continue setup" FontSize="15" FontWeight="SemiBold" /><TextBlock Text="Open the clicker scheduler or inspect the recovered configuration." FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,5,0,16" /><WrapPanel><Button Style="{StaticResource PrimaryButton}" Content="Open clicker" Click="OpenClicker_Click" /><Button Style="{StaticResource SecondaryButton}" Content="Open trigger bot" Click="OpenTriggerBot_Click" /><Button Style="{StaticResource SecondaryButton}" Content="View detected games" Tag="Games" Click="Navigate_Click" /></WrapPanel></StackPanel></Border></StackPanel></Grid>
+                    <Grid x:Name="ClickerPage" Visibility="Collapsed"><StackPanel><Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20"><StackPanel><TextBlock Text="Macro scheduler" FontSize="16" FontWeight="SemiBold" /><TextBlock Text="Milestone 02: timing and lifecycle are now wired. The scheduler emits abstract actions for validation; it does not inject OS input." FontSize="11" Foreground="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,5,0,18" /><UniformGrid Columns="2"><StackPanel Margin="0,0,14,13"><TextBlock Text="Actions per second (APS)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="ApsTextBox" Text="15" /></StackPanel><StackPanel Margin="0,0,0,13"><TextBlock Text="Action mode" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><ComboBox x:Name="ActionModeComboBox" SelectedValuePath="Content"><ComboBoxItem Content="Mouse" /><ComboBoxItem Content="Keyboard" /></ComboBox></StackPanel><StackPanel Margin="0,0,14,13"><TextBlock Text="Key or button to repeat" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="MacroKeyTextBox" Text="LeftMouse" /></StackPanel><StackPanel Margin="0,0,0,13"><TextBlock Text="Activation key" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="ActivationKeyTextBox" Text="F6" /></StackPanel></UniformGrid><CheckBox x:Name="HoldModeCheckBox" Content="Hold activation while the key is pressed" Foreground="#C4D0DA" Margin="0,3,0,8" /><CheckBox x:Name="RandomizeCheckBox" Content="Randomize timing" Foreground="#C4D0DA" Margin="0,3,0,15" /><WrapPanel><Button Style="{StaticResource PrimaryButton}" Content="Start scheduler" Click="StartMacro_Click" /><Button Style="{StaticResource SecondaryButton}" Content="Stop scheduler" Click="StopMacro_Click" /><Button Style="{StaticResource SecondaryButton}" Content="Save settings" Click="SaveClickerSettings_Click" /></WrapPanel></StackPanel></Border></StackPanel></Grid>
+                    <Grid x:Name="TriggerBotPage" Visibility="Collapsed"><StackPanel><Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20"><StackPanel><TextBlock Text="Pixel trigger configuration" FontSize="16" FontWeight="SemiBold" /><TextBlock Text="Target and timing parameters remain configuration-only while the scanner is rebuilt." FontSize="11" Foreground="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,5,0,18" /><UniformGrid Columns="2"><StackPanel Margin="0,0,14,13"><TextBlock Text="Target color (hex)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="TargetColorTextBox" Text="#FF4040" /></StackPanel><StackPanel><TextBlock Text="Color tolerance" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="ToleranceTextBox" Text="12" /></StackPanel><StackPanel Margin="0,0,14,13"><TextBlock Text="Reaction time (ms)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="ReactionTimeTextBox" Text="0" /></StackPanel><StackPanel><TextBlock Text="Press cooldown (ms)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="PressCooldownTextBox" Text="75" /></StackPanel><StackPanel Margin="0,0,14,13"><TextBlock Text="Duplicate-ignore (ms)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="DuplicateIgnoreTextBox" Text="50" /></StackPanel><StackPanel><TextBlock Text="Scan radius (px)" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="ScanRadiusTextBox" Text="6" /></StackPanel><StackPanel Margin="0,0,14,13"><TextBlock Text="Activation key" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="TriggerActivationKeyTextBox" Text="F7" /></StackPanel><StackPanel><TextBlock Text="Action key" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><TextBox x:Name="TriggerKeyTextBox" Text="E" /></StackPanel></UniformGrid><StackPanel Margin="0,0,0,15"><TextBlock Text="Action mouse button" Foreground="{StaticResource MutedText}" FontSize="11" Margin="0,0,0,6" /><ComboBox x:Name="TriggerMouseComboBox" SelectedValuePath="Content"><ComboBoxItem Content="None" /><ComboBoxItem Content="Left" /><ComboBoxItem Content="Right" /><ComboBoxItem Content="Middle" /></ComboBox></StackPanel><CheckBox x:Name="TriggerHoldModeCheckBox" Content="Require activation to be held" Foreground="#C4D0DA" Margin="0,0,0,15" /><Button Style="{StaticResource PrimaryButton}" Content="Save trigger settings" HorizontalAlignment="Left" Click="SaveTriggerSettings_Click" /></StackPanel></Border></StackPanel></Grid>
+                    <Grid x:Name="GamesPage" Visibility="Collapsed"><StackPanel><Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20"><StackPanel><Grid><StackPanel><TextBlock Text="Running game processes" FontSize="16" FontWeight="SemiBold" /><TextBlock x:Name="GamesCountText" Text="Not scanned yet" FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,5,0,0" /></StackPanel><Button Style="{StaticResource PrimaryButton}" Content="Scan processes" HorizontalAlignment="Right" VerticalAlignment="Center" Click="RefreshGames_Click" /></Grid><ListBox x:Name="GamesListBox" Background="#0D1620" Foreground="#EAF1F7" BorderBrush="#2B3C4B" Margin="0,18,0,0" MinHeight="250" Padding="7" /></StackPanel></Border></StackPanel></Grid>
+                    <Grid x:Name="ProfilesPage" Visibility="Collapsed"><StackPanel><Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20"><StackPanel><TextBlock Text="Profiles" FontSize="16" FontWeight="SemiBold" /><TextBox x:Name="ProfileNameTextBox" Text="Default" Margin="0,12,0,14" /><ComboBox x:Name="ProfilesComboBox" DisplayMemberPath="Name" Margin="0,0,0,16" /><WrapPanel><Button Style="{StaticResource PrimaryButton}" Content="Save current as profile" Click="SaveProfile_Click" /><Button Style="{StaticResource SecondaryButton}" Content="Apply selected" Click="ApplyProfile_Click" /><Button Style="{StaticResource SecondaryButton}" Content="Delete selected" Click="DeleteProfile_Click" /></WrapPanel></StackPanel></Border></StackPanel></Grid>
+                    <Grid x:Name="SettingsPage" Visibility="Collapsed"><StackPanel><Border Background="{StaticResource PanelBackground}" BorderBrush="{StaticResource PanelBorder}" BorderThickness="1" CornerRadius="12" Padding="20"><StackPanel><TextBlock Text="Application preferences" FontSize="16" FontWeight="SemiBold" /><TextBlock Text="Preferences are stored locally. Startup registration is not enabled by this reconstruction." FontSize="11" Foreground="{StaticResource MutedText}" TextWrapping="Wrap" Margin="0,5,0,18" /><CheckBox x:Name="RunOnStartupCheckBox" Content="Run on Windows startup (preference only)" Foreground="#C4D0DA" Margin="0,0,0,12" /><CheckBox x:Name="MinimizeToTrayCheckBox" Content="Minimize to tray (not implemented)" Foreground="#C4D0DA" Margin="0,0,0,12" /><CheckBox x:Name="PlayBeepCheckBox" Content="Play notification beep" Foreground="#C4D0DA" Margin="0,0,0,12" /><CheckBox x:Name="TopmostCheckBox" Content="Keep Sainty above other windows" Foreground="#C4D0DA" Margin="0,0,0,18" /><TextBlock Text="Theme" FontSize="11" Foreground="{StaticResource MutedText}" Margin="0,0,0,6" /><ComboBox x:Name="ThemeComboBox" SelectedValuePath="Content" HorizontalAlignment="Left" Width="180" Margin="0,0,0,17"><ComboBoxItem Content="Dark" /></ComboBox><Button Style="{StaticResource PrimaryButton}" Content="Save preferences" HorizontalAlignment="Left" Click="SavePreferences_Click" /></StackPanel></Border></StackPanel></Grid>
                 </Grid>
             </ScrollViewer>
-
-            <Border Grid.Row="2" BorderBrush="#21303D" BorderThickness="0,1,0,0" Padding="0,8,0,0">
-                <TextBlock x:Name="StatusText" Text="Ready · settings remain local to this device" FontSize="10" Foreground="#7F94A6" />
-            </Border>
+            <Border Grid.Row="2" BorderBrush="#21303D" BorderThickness="0,1,0,0" Padding="0,8,0,0"><TextBlock x:Name="StatusText" Text="Ready · settings remain local to this device" FontSize="10" Foreground="#7F94A6" /></Border>
         </Grid>
     </Grid>
 </Window>
