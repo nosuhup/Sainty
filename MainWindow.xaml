@@ -19,7 +19,7 @@
             <DockPanel Margin="18,22,18,18">
                 <StackPanel DockPanel.Dock="Top">
                     <TextBlock Text="SAINTY" FontSize="24" FontWeight="Bold" Foreground="#EAF1F7" />
-                    <TextBlock Text="DESKTOP CONTROL" FontSize="9" CharacterSpacing="180" Foreground="#6E8295" Margin="1,4,0,27" />
+                    <TextBlock Text="DESKTOP CONTROL" FontSize="9" Foreground="#6E8295" Margin="1,4,0,27" />
                     <TextBlock Text="WORKSPACE" FontSize="10" FontWeight="Bold" Foreground="#607486" Margin="11,0,0,8" />
                     <Button Style="{StaticResource NavButton}" Tag="Overview" Click="Navigate_Click" Content="◈   Overview" />
                     <Button Style="{StaticResource NavButton}" Tag="Clicker" Click="Navigate_Click" Content="◉   Clicker" />
