@@ -42,13 +42,13 @@ public static class TriggerBotEngineSelfTest
     private static async Task TestToleranceBoundaryAsync()
     {
         var settings = BaseSettings();
-        settings.TBTolerance = 3;
+        settings.TBTolerance = 2;
         await using var engine = CreateEngine(settings);
         var hits = 0;
         engine.MatchDetected += (_, _) => hits++;
 
         engine.Start((_, _) => ValueTask.FromResult<IReadOnlyList<PixelSample>>([
-            new PixelSample(1, 1, new RgbColor(254, 255, 254)) // distance 2: inside tolerance
+            new PixelSample(1, 1, new RgbColor(254, 1, 0)) // distance 2: exactly on tolerance boundary
         ]));
         await WaitForAsync(() => hits == 1);
         await engine.StopAsync();
