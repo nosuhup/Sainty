@@ -46,6 +46,20 @@ public partial class MainWindow : Window
         StatusText.Text = "Macro scheduler stopped.";
     }
 
+    private async void RunTriggerSelfTest_Click(object sender, RoutedEventArgs e)
+    {
+        TriggerTestStatusText.Text = "Running deterministic scanner self-test...";
+        try
+        {
+            await TriggerBotEngineSelfTest.RunAsync();
+            TriggerTestStatusText.Text = "PASS · synthetic pixel match, cooldown and duplicate filtering validated.";
+        }
+        catch (Exception ex)
+        {
+            TriggerTestStatusText.Text = $"FAIL · {ex.Message}";
+        }
+    }
+
     private void Navigate_Click(object sender, RoutedEventArgs e) { if (sender is Button { Tag: string page }) ShowPage(page); }
     private void OpenClicker_Click(object sender, RoutedEventArgs e) => ShowPage("Clicker");
     private void OpenTriggerBot_Click(object sender, RoutedEventArgs e) => ShowPage("Trigger Bot");
