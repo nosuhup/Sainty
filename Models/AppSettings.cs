@@ -19,6 +19,7 @@ public sealed class AppSettings
     public string LastProfileName { get; set; } = "Default";
     public string MacroKeyToSpam { get; set; } = "LeftMouse";
     public string TriggerKey { get; set; } = "F6";
+    public string TriggerMouse { get; set; } = "None";
 
     public string TBTargetColorHex { get; set; } = "#FF4040";
     public string TBKeyToPress { get; set; } = "E";
